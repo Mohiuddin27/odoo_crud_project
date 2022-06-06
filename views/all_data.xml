@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="curd_project.all_data" name="crud_create">
+            <t t-call="website.layout">
+                <section class="bkash-content">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-8 offset-md-2 bkash-div col-12">
+                               <div class="d-flex justify-content-between mt-5 mb-5">
+                                   <h2>All Data</h2>
+                                   <a href="/" class="btn btn-success">Add New data</a>
+                               </div>
+                                <div>
+                                    <table class="table table-dark">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Cell</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="records" t-as="item">
+                                            <tr>
+                                                <th scope="row"><t t-esc="item['id']"/></th>
+                                                <td> <t t-esc="item['name']"/></td>
+                                                <td> <t t-esc="item['email']"/></td>
+                                                <td> <t t-esc="item['cell']"/></td>
+                                                <td>
+                                                    <a t-attf-href="edit/{{item['id']}}" class="btn btn-sm btn-warning">Update</a>
+                                                    <a t-attf-href="delete/{{item['id']}}" class="btn btn-sm btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </template>
+    </data>
+</odoo>

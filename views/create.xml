@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="crud_project_create_tree_view" model="ir.ui.view">
+            <field name="name">crud.project.create.tree.view</field>
+            <field name="model">crud.create</field>
+            <field name="arch" type="xml">
+                <tree string="Create Crud">
+
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="cell"/>
+
+                </tree>
+            </field>
+        </record>
+        <!-- Form View -->
+        <record id="crud_project_create_form_view" model="ir.ui.view">
+            <field name="name">crud.project.create.form.view</field>
+            <field name="model">crud.create</field>
+            <field name="priority" eval="7"/>
+            <field name="arch" type="xml">
+                <form string="crud create form">
+                    <sheet string="crud form">
+
+
+                        <group>
+                            <group>
+                                <field name="name" required="True"/>
+                            </group>
+                           <group>
+                                <field name="email" required="True"/>
+                            </group>
+                            <group>
+                                <field name="cell" required="True"/>
+                            </group>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+        <record id="action_crud_project_create_view" model="ir.actions.act_window">
+            <field name="name">Crud Project</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crud.create</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="crud_project_create_tree_view"/>
+        </record>
+    </data>
+</odoo>

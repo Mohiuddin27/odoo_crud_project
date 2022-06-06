@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="curd_project.edit_data" name="crud_create">
+            <t t-call="website.layout">
+                <section class="bkash-content">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-6 offset-md-3 bkash-div col-12">
+                               <h2 class="text-center">Edit Data</h2>
+                                <div>
+                                    <form id="create_crud" t-attf-action="/update_crud/{{edit_data.id}}" name="myForm" method="POST">
+
+                                        <div class="form-group">
+                                            <label style="font-weight: bold">Enter Name</label>
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="name"
+                                                    style="width: 95%"
+                                                    aria-describedby="emailHelp"
+                                                    t-att-value="edit_data.name"
+                                                    name="name"
+                                                    required="ture"
+
+                                            />
+                                            <span class="text-danger" id="amt"/>
+                                        </div>
+                                        <div class="form-group">
+                                           <label style="font-weight: bold">Enter Email</label>
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="email"
+                                                    style="width: 95%"
+                                                    aria-describedby="emailHelp"
+                                                    t-att-value="edit_data.email"
+                                                    name="email"
+                                                    required="ture"
+
+                                            />
+                                            <span id="sendnum" class="text-danger"/>
+                                        </div>
+                                        <div class="form-group">
+                                           <label style="font-weight: bold">Enter Cell</label>
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="cell"
+                                                    style="width: 95%"
+                                                    aria-describedby="emailHelp"
+                                                    t-att-value="edit_data.cell"
+                                                    name="cell"
+                                                    required="ture"
+
+                                            />
+                                            <span id="sendnum" class="text-danger"/>
+                                        </div>
+
+                                        <button type="submit" id="btn"
+                                                class="btn btn-warning text-light mt-3 mb-5">Update
+                                        </button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </template>
+    </data>
+</odoo>

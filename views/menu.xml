@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Top Menu -->
+        <menuitem name="Crud Project"
+                  id="crud_project_root"
+                  sequence="0"/>
+
+        <menuitem name="crud_create"
+                  id="crud_create"
+                  parent="crud_project_root"
+                  action = "action_crud_project_create_view"
+                  sequence="1"/>
+
+
+
+
+    </data>
+
+</odoo>
